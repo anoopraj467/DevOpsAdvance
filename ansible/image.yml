@@ -1,0 +1,13 @@
+---
+- 
+  hosts: all
+  become: true
+  tasks:
+      - name: create a  container
+        docker_container:
+          name: nodejs
+          image: 1804567/devoops/nodejs
+          state: present
+          recreate: yes
+          exposed_ports:
+            - 3005
